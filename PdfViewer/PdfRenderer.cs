@@ -220,6 +220,7 @@ namespace PdfViewer
                 int width = (int)(DefaultSettings.Width * _scaleFactor);
                 int fullWidth = width + ShadeBorder.Size.Horizontal + PageMargin.Horizontal;
 
+                //只有在显示区域中的才进行相应操作
                 if (e.ClipRectangle.IntersectsWith(new Rectangle(
                     leftOffset,
                     offset + topOffset,

@@ -7,6 +7,9 @@ using System.Windows.Forms;
 
 namespace PdfViewer
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public abstract class PanningZoomingScrollControl : CustomScrollControl
     {
         private const double ZoomMin = 0.1;

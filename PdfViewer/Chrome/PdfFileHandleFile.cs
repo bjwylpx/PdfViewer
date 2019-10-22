@@ -6,6 +6,9 @@ using System.Text;
 
 namespace PdfViewer.Chrome
 {
+    /// <summary>
+    /// 通过文件句柄来操作PDF
+    /// </summary>
     internal abstract class PdfFileHandleFile : PdfFile
     {
         private SafeHandle _mappedHandle;
@@ -31,7 +34,8 @@ namespace PdfViewer.Chrome
                 throw new Win32Exception();
         }
 
-        public override bool RenderPDFPageToDC(int pageNumber, IntPtr dc, int dpiX, int dpiY, int boundsOriginX, int boundsOriginY, int boundsWidth, int boundsHeight, bool fitToBounds, bool stretchToBounds, bool keepAspectRation, bool centerInBounds, bool autoRotate)
+        public override bool RenderPDFPageToDC(int pageNumber, IntPtr dc, int dpiX, int dpiY, int boundsOriginX, int boundsOriginY, 
+            int boundsWidth, int boundsHeight, bool fitToBounds, bool stretchToBounds, bool keepAspectRation, bool centerInBounds, bool autoRotate)
         {
             if (_disposed)
                 throw new ObjectDisposedException(GetType().Name);

@@ -9,6 +9,9 @@ using System.Windows.Forms;
 
 namespace PdfViewer
 {
+    /// <summary>
+    /// 滚动条控件
+    /// </summary>
     public class CustomScrollControl : Control
     {
         private Size _displaySize;

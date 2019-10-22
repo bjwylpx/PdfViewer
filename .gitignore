@@ -5,3 +5,5 @@ Thumbs.db
 /*.shfbproj_*
 /*.dotCover
 /_ReSharper*
+/.vs/PdfViewer/v16/Server/sqlite3
+/.vs/PdfViewer/v16/.suo

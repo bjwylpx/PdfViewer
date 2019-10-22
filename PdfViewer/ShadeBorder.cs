@@ -7,6 +7,9 @@ using System.Windows.Forms;
 
 namespace PdfViewer
 {
+    /// <summary>
+    /// 显示区域添加一个阴影边框
+    /// </summary>
     internal class ShadeBorder : IDisposable
     {
         public static readonly Padding Size = new Padding(4);

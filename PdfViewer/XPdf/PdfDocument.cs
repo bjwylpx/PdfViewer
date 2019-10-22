@@ -8,6 +8,9 @@ using PDFLibNet;
 
 namespace PdfViewer.XPdf
 {
+    /// <summary>
+    /// 
+    /// </summary>
     internal class PdfDocument : global::PdfViewer.PdfDocument
     {
         private PDFWrapper _document = new PDFWrapper();

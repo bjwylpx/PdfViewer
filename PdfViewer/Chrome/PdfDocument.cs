@@ -9,6 +9,9 @@ using System.Windows.Forms;
 
 namespace PdfViewer.Chrome
 {
+    /// <summary>
+    /// 利用Chrome中提供的PDF.dll库对PDF进行解析的一个再封装
+    /// </summary>
     internal class PdfDocument : global::PdfViewer.PdfDocument
     {
         private bool _disposed;
@@ -44,7 +47,7 @@ namespace PdfViewer.Chrome
 
             int pageCount;
             double maxPageWidth;
-
+            //得到页数和最大页面宽度
             bool success = file.GetPDFDocInfo(out pageCount, out maxPageWidth);
 
             if (!success)
@@ -54,6 +57,14 @@ namespace PdfViewer.Chrome
             MaximumPageWidth = maxPageWidth;
         }
 
+        /// <summary>
+        /// 将指定的页码显示出现
+        /// </summary>
+        /// <param name="page">要呈现的页码</param>
+        /// <param name="graphics"></param>
+        /// <param name="dpiX"></param>
+        /// <param name="dpiY"></param>
+        /// <param name="bounds"></param>
         public override void Render(int page, Graphics graphics, float dpiX, float dpiY, Rectangle bounds)
         {
             if (graphics == null)
@@ -79,7 +90,7 @@ namespace PdfViewer.Chrome
                     NativeMethods.SetGraphicsMode(dc, NativeMethods.GM_ADVANCED);
                     NativeMethods.ModifyWorldTransform(dc, ref transform, NativeMethods.MWT_LEFTMULTIPLY);
                 }
-
+                
                 bool success = _file.RenderPDFPageToDC(
                     page,
                     dc,

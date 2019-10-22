@@ -6,6 +6,9 @@ using System.Text;
 
 namespace PdfViewer.Chrome
 {
+    /// <summary>
+    /// 文件流的PDF文件表示
+    /// </summary>
     internal class PdfFileStreamFile : PdfFileHandleFile
     {
         private FileStream _stream;

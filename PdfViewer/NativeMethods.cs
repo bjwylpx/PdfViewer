@@ -9,6 +9,9 @@ using Microsoft.Win32.SafeHandles;
 
 namespace PdfViewer
 {
+    /// <summary>
+    /// Windows API的调用
+    /// </summary>
     internal static class NativeMethods
     {
         [DllImport("pdf.dll", SetLastError = true)]

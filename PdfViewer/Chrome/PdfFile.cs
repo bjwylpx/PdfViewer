@@ -5,8 +5,16 @@ using System.Text;
 
 namespace PdfViewer.Chrome
 {
+    /// <summary>
+    /// PdfFile的抽象类，定义了要在子类中实现的各个接口
+    /// </summary>
     internal abstract class PdfFile : IDisposable
     {
+        /// <summary>
+        /// 一个工厂方法，用于实例化各个具体的PdfFile实例
+        /// </summary>
+        /// <param name="stream"></param>
+        /// <returns></returns>
         public static PdfFile Create(Stream stream)
         {
             if (stream == null)
